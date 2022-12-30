@@ -3,7 +3,7 @@ const db = require("../../data/dbConfig")
 
 const get = async (id) =>{
     let rows
-    if(id) {
+    if(id>= 0) {
         rows = await db("projects").where("project_id", id)
     } else {
         rows = await db("projects")
