@@ -21,7 +21,8 @@ exports.up = function(knex) {
   })
   .createTableIfNotExists("tasks",tbl=>{
     tbl.increments("task_id");
-    tbl.text("task_description").notNullable();
+    tbl.text("task_description")
+        .notNullable();
     tbl.text("task_notes");
     tbl.boolean("task_completed")
         .defaultTo(false);
